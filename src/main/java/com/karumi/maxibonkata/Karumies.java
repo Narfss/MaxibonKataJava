@@ -23,5 +23,6 @@ public class Karumies {
   public static final Developer DAVIDE = new Developer("Davide", 0);
   public static final Developer SERGIO = new Developer("Sergio", 2);
   public static final Developer JORGE = new Developer("Jorge", 1);
+  public static final Developer FRAN = new Developer("Fran", 1);
 
 }

@@ -19,18 +19,22 @@ package com.karumi.maxibonkata;
 import com.pholser.junit.quickcheck.generator.GenerationStatus;
 import com.pholser.junit.quickcheck.generator.Generator;
 import com.pholser.junit.quickcheck.random.SourceOfRandomness;
+import java.util.List;
+import org.apache.commons.lang3.RandomStringUtils;
 
-public class KarumiesGenerator extends Generator<Developer> {
+public class ListDevelopersGenerator extends Generator<DeveloperHorde> {
 
-  private static final Developer[] KARUMIES = new Developer[] {
-      Karumies.PEDRO, Karumies.ALBERTO, Karumies.DAVIDE, Karumies.JORGE, Karumies.SERGIO, Karumies.FRAN
-  };
-
-  public KarumiesGenerator() {
-    super(Developer.class);
+  public ListDevelopersGenerator() {
+    super(DeveloperHorde.class);
   }
 
-  @Override public Developer generate(SourceOfRandomness random, GenerationStatus status) {
-    return KARUMIES[random.nextInt(5)];
+  @Override public DeveloperHorde generate(SourceOfRandomness random, GenerationStatus status) {
+    DeveloperHorde developerHorde = new DeveloperHorde();
+    for (int i = 0; i < status.size(); i++) {
+      String name = RandomStringUtils.randomAlphabetic(random.nextInt(16));
+      int numberOfMaxibons = random.nextInt(0, Integer.MAX_VALUE);
+      developerHorde.add(new Developer(name, numberOfMaxibons));
+    }
+    return developerHorde;
   }
 }

@@ -22,11 +22,8 @@ class Developer {
   private final int numberOfMaxibonsToGrab;
 
   Developer(String name, int numberOfMaxibonsToGrab) {
-    if (numberOfMaxibonsToGrab < 0) {
-      numberOfMaxibonsToGrab = 0;
-    }
     this.name = name;
-    this.numberOfMaxibonsToGrab = numberOfMaxibonsToGrab;
+    this.numberOfMaxibonsToGrab = Math.max(0, numberOfMaxibonsToGrab);
   }
 
   public String getName() {
