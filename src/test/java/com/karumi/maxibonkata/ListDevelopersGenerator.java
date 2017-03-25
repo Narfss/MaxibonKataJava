@@ -19,7 +19,6 @@ package com.karumi.maxibonkata;
 import com.pholser.junit.quickcheck.generator.GenerationStatus;
 import com.pholser.junit.quickcheck.generator.Generator;
 import com.pholser.junit.quickcheck.random.SourceOfRandomness;
-import java.util.List;
 import org.apache.commons.lang3.RandomStringUtils;
 
 public class ListDevelopersGenerator extends Generator<DeveloperHorde> {
